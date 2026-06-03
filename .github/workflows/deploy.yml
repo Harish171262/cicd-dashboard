@@ -10,39 +10,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Install dependencies
-        run: |
-          cd backend
-          npm install
+        run: cd backend && npm install
 
       - name: Run tests
-        run: |
-          cd backend
-          npm test
+        run: cd backend && npm test
 
   build:
     runs-on: ubuntu-latest
     needs: test
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Build Backend Docker image
-        run: |
-          cd backend
-          docker build -t cicd-backend .
+        run: cd backend && docker build -t cicd-backend .
 
       - name: Build Frontend Docker image
-        run: |
-          cd frontend
-          docker build -t cicd-frontend .
+        run: cd frontend && docker build -t cicd-frontend .
 
   deploy:
     runs-on: ubuntu-latest
