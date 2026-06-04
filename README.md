@@ -4,7 +4,7 @@ A real-time status dashboard with automated CI/CD
 pipeline using GitHub Actions and Docker.
 
 ## 🔗 Live Demo
-- Frontend: https://cicd-dashboard-xxxx.vercel.app
+- Frontend: https://cicd-dashboard-gamma.vercel.app/
 - Backend: https://cicd-dashboard-backend-phsn.onrender.com
 
 ## 🛠️ Tech Stack
